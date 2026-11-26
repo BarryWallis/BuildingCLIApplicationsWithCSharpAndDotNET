@@ -100,7 +100,7 @@ static void ConsoleProperties()
     Console.WriteLine("Press any key to exit...");
     // waiting for the user to press a key to end the program.
     // this is useful to see the altering of the terminal's title
-    Console.ReadKey(true);
+    _ = Console.ReadKey(true);
 }
 
 // Read and echo lines until the user submits an empty line.
@@ -179,7 +179,7 @@ static void CancelKeyPress()
     {
         // waiting for the user to press CTRL+C
         Console.WriteLine($"Printing line number {counter++}");
-        Task delayTask = Task.Run(async ()  => await Task.Delay(1000));
+        Task delayTask = Task.Run(async () => await Task.Delay(1000));
         delayTask.Wait();
     }
 }
