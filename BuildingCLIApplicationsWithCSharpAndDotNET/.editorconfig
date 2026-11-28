@@ -1,4 +1,13 @@
 ﻿[*.cs]
 
 # IDE0008: Use explicit type
-dotnet_diagnostic.IDE0008.severity = warning
+dotnet_diagnostic.IDE0008.severity = suggestion
+
+# IDE0040: Add accessibility modifiers
+dotnet_diagnostic.IDE0040.severity = suggestion
+
+# IDE0210: Convert to top-level statements
+dotnet_diagnostic.IDE0210.severity = suggestion
+
+# CA1311: Specify a culture or use an invariant version
+dotnet_diagnostic.CA1311.severity = suggestion

@@ -1,7 +1,13 @@
 <Solution>
+  <Folder Name="/Chapter 3/">
+    <Project Path="GuessingGame/GuessingGame.csproj" Id="7a94c2b8-aa01-4c65-ad5f-4453a452c90c" />
+    <Project Path="helloConsole/helloConsole.csproj" />
+  </Folder>
+  <Folder Name="/Chapter 4/">
+    <Project Path="BookMarkr.Tests/BookMarkr.Tests.csproj" />
+    <Project Path="BookMarkr/BookMarkr.csproj" Id="c2cb4606-d235-4000-bad2-55badfa34f3e" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
   </Folder>
-  <Project Path="GuessingGame/GuessingGame.csproj" Id="7a94c2b8-aa01-4c65-ad5f-4453a452c90c" />
-  <Project Path="helloConsole/helloConsole.csproj" />
 </Solution>

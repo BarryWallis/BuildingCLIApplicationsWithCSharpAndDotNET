@@ -1,0 +1,56 @@
+﻿using BookMarkr;
+using System.Runtime.Intrinsics.Arm;
+using System.Xml.Linq;
+
+/*
+    This file is the original file that was created when the project was created. The newer Propgram.cs is updated to use libraries.
+*/
+
+// Dispatch the command supplied on the command line; command names are case-insensitive.
+if (args is null or { Length: 0 })
+{
+    Helper.ShowErrorMessage(["You haven't passed any argument. The expected syntax is:", "bookmarkr <command-name> <parameters>"]);
+    return;
+}
+
+BookmarkService service = new();
+switch (args[0].ToLowerInvariant())
+{
+    case "link":
+        ManageLinks(args, service);
+        break;
+    // we may add more commands here...
+    default:
+        Helper.ShowErrorMessage(["Unknown Command"]);
+        break;
+}
+
+// The add subcommand expects exactly a name and a URL after "link add".
+static void ManageLinks(string[] args, BookmarkService service)
+{
+    if (args.Length < 2)
+    {
+        Helper.ShowErrorMessage(["Insufficient number of parameters. The expected syntax is:", "bookmarkr link <subcommand> <parameters>"]);
+        return;
+    }
+
+    switch (args[1].ToLowerInvariant())
+    {
+        case "add":
+            if (args.Length == 4)
+            {
+                service.AddLink(args[2], args[3]);
+
+            }
+            else
+            {
+                Helper.ShowErrorMessage(["Insufficient number of parameters. The expected syntax is:", "bookmarkr link add <name> <url>"]);
+            }
+            break;
+
+        // we may add more subcommands here...
+        default:
+            Helper.ShowErrorMessage(["Insufficient number of parameters. The expected syntax is:", "bookmarkr link <subcommand> <parameters>"]);
+            break;
+    }
+}

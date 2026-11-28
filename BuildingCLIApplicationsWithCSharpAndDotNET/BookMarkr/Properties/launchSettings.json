@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BookMarkr": {
+      "commandName": "Project",
+      "commandLineArgs": "--version"
+    }
+  }
+}
